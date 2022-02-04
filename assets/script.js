@@ -40,3 +40,72 @@ const questions = [
 ];
 
 
+const startBtn = document.getElementById("start-game");
+const information = document.getElementById("card-information");
+const question_container = document.getElementById("question-container");
+
+let shuffleQuestions, currentQuestion;
+const questionText = document.getElementById("question");
+const answerBtn = document.getElementById("answer-buttons");
+
+const correctOrIncorrect = document.getElementById("question-checker");
+
+const startGame = () => {
+  console.log("start game");
+  information.classList.add("hide");
+  question_container.classList.remove("hide");
+
+  shuffleQuestions = questions.sort(() => Math.random() - 0.5);
+  currentQuestion = 0;
+
+  setNextQuestion();
+};
+
+const resetState = () => {
+  setTimeout(() => {
+    correctOrIncorrect.innerText = "";
+    while (answerBtn.firstChild) { // remove all children from answerBtn div (answer buttons)
+      answerBtn.removeChild(answerBtn.firstChild);
+    }
+    setNextQuestion();
+  }, 1000);
+};
+
+const setNextQuestion = () => {
+  resetState(); // reset state of the questions and answers
+  showQuestion(); // show question and options from array of questions and options
+  currentQuestion++;
+};
+
+const showQuestion = () => {
+  questionText.innerHTML = shuffleQuestions[currentQuestion].questionText; // set question text from array of questions
+
+  shuffleQuestions[currentQuestion].options.forEach((option) => {
+    const button = document.createElement("button");
+    button.innerText = option;
+    button.classList.add("btn");
+    answerBtn.appendChild(button);
+  }) // set options from array of questions and options
+};
+
+const setStatusClass = (element, correct) => {
+  clearStatusClass(element);
+  if (correct === element.dataset.answer) {
+    correctOrIncorrect.innerText = "Correct!";
+  }
+  else {
+    correctOrIncorrect.innerText = "Incorrect!";
+  }
+}
+
+const selectAnswer = () => {
+  const correctAnswer = shuffleQuestions[currentQuestion].answer;
+  setStatusClass(document.body, correctAnswer);
+  Array.from(answerBtn.children).forEach((button) => {
+    setStatusClass(button, button.dataset.answer);
+  });
+};
+
+startBtn.addEventListener("click", startGame);
+
+

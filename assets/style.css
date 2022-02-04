@@ -28,6 +28,10 @@ body {
     color: var(--text-color);
 }
 
+.hide {
+    display: none;
+}
+
 .btn {
     padding: 1rem 1.25rem;
     font-weight: bolder;
@@ -89,6 +93,27 @@ header li a {
 .container .card .heading, .subheading {
     font-weight: 500;
     margin-block: 1rem;
+}
+
+#question {
+    margin-bottom: 1rem;
+}
+
+#answer-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#answer-buttons button {
+    width: 100%;
+    margin-block: 0.2rem;
+}
+
+#question-checker {
+    margin-top: 1rem;
+    font-weight: lighter;
 }
 
 /* Extra small devices (phones, 600px and down) */

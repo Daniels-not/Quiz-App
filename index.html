@@ -7,10 +7,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Quiz app</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/style.css">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         <script src="https://kit.fontawesome.com/c159a44032.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -24,10 +25,19 @@
         <main>
             <div class="container">
                 <div class="card">
-                    <h1 class="title">Coding Quiz Challenge</h1>
-                    <p class="heading">Try to answer to following code-release questions within the time limit.</p>
-                    <p class="subheading">Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-                    <button class="btn btn-start">Start Quiz</button>
+                    <div id="card-information">
+                        <h1 class="title">Coding Quiz Challenge</h1>
+                        <p class="heading">Try to answer to following code-release questions within the time limit.</p>
+                        <p class="subheading">Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                        <button class="btn btn-start" id="start-game">Start Quiz</button>
+                    </div>
+
+                    <div id="question-container" class="hide">
+                        <h1 id="question">Question</h1>
+                        <div id="answer-buttons"></div>
+                        <hr>
+                        <h2 id="question-checker"></h2>
+                    </div>
                 </div>
             </div>
         </main>
