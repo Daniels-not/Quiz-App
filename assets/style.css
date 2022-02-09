@@ -32,6 +32,15 @@ body {
     display: none;
 }
 
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
 .btn {
     padding: 1rem 1.25rem;
     font-weight: bolder;
@@ -99,35 +108,73 @@ header li a {
     margin-bottom: 1rem;
 }
 
-#answer-buttons {
+#answer_buttons {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
 }
 
-#answer-buttons button {
+#answer_buttons button {
     width: 100%;
     margin-block: 0.2rem;
 }
 
-#question-checker {
+#question_checker {
     margin-top: 1rem;
     font-weight: lighter;
+}
+
+#all_done h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-block: 1rem;
+}
+
+.subScore {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-block: 1rem;
+    margin-left: 2.9rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.row .btn {
+    margin-left: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
-    .container .card {
-        max-width: 25rem;
-        padding: 2rem;
-    }
-
     .container .card .title{
         margin-top: 1rem;
     }
 
+    .row .btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .row input[type="text"] {
+        width: 100%;
+    }
+
+    #go_back {
+        width: 100%;
+        margin-block-end: 0.5rem;
+    }
+
+    #clear_high_score {
+        width: 100%;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

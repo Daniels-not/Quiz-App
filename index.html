@@ -19,24 +19,40 @@
             <a id=leaderboard>View Highscores <i class="fas fa-hand-point-left fa-lg"></i>
             </i></a>
             <ul>
-                <li><a href="#" class="time">Time: </a></li>
+                <li><p>Time: <a href="#" class="time" id="timer"> </a></p></li>
             </ul>
         </header>
         <main>
             <div class="container">
                 <div class="card">
-                    <div id="card-information">
+                    <div id="card_information">
                         <h1 class="title">Coding Quiz Challenge</h1>
                         <p class="heading">Try to answer to following code-release questions within the time limit.</p>
                         <p class="subheading">Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-                        <button class="btn btn-start" id="start-game">Start Quiz</button>
+                        <button class="btn" id="start_game">Start Quiz</button>
                     </div>
 
-                    <div id="question-container" class="hide">
-                        <h1 id="question">Question</h1>
-                        <div id="answer-buttons"></div>
-                        <hr>
-                        <h2 id="question-checker"></h2>
+                    <div id="question_container" class="hide">
+                        <h1 id="question"></h1>
+                        <div id="answer_buttons"></div>
+                        <hr class="line">
+                        <h2 id="question_checker"></h2>
+                    </div>
+
+                    <div id="all_done" class="hide">
+                        <h1>All done!</h1>
+                        <h2>Your final score is: <span id="score">...</span></h2>
+                        <div class="row">
+                            <h2>Enter Initials: <input type="text" id="initials" maxlength="2"></h2>
+                            <button class="btn" id="submit_score">Submit</button>
+                        </div>
+                    </div>
+
+                    <div id="high_score" class="hide">
+                        <h1>Highscore</h1>
+                        <div id="score_list"></div>
+                        <button class="btn" id="go_back">Go Back</button>
+                        <button class="btn" id="clear_high_score">Clear Highscores</button>
                     </div>
                 </div>
             </div>
